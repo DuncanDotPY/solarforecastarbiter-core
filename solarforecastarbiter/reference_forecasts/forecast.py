@@ -249,7 +249,7 @@ def unmix_intervals(mixed, lower=0, upper=100):
         raise ValueError('mixed period must be 6 hours and data interval must '
                          'be 3 hours or 1 hour')
     unmixed = pd.Series(f.reshape(-1, order='F'), index=mixed.index)
-    unmixed = unmixed.clip(lower=0, upper=100)
+    unmixed = unmixed.clip(lower=lower, upper=upper)
     return unmixed
 
 
